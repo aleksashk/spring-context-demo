@@ -10,11 +10,15 @@ public class ProjectConfig {
 
     @Bean
     public Cat cat() {
-        return new Cat();
+        Cat cat = new Cat();
+        cat.setName("Tom");
+        return cat;
     }
 
     @Bean
     public Owner owner() {
-        return new Owner();
+        Owner owner = new Owner();
+        owner.setCat(cat());
+        return owner;
     }
 }
