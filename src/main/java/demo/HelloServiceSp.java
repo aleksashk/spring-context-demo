@@ -1,10 +1,10 @@
 package demo;
 
-import org.springframework.context.annotation.Primary;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-@Primary
+@Qualifier("sp")
 public class HelloServiceSp implements HelloService {
     @Override
     public String sayHello(String name) {
