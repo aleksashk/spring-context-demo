@@ -14,6 +14,7 @@ public class ProductRepository {
     }
 
     public void addProduct(Product product){
-
+        String query = "insert into product values(null, ?, ?)";
+        jdbcTemplate.update(query, product.getName(), product.getPrice());
     }
 }
