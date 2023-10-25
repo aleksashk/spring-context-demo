@@ -5,7 +5,11 @@ import repositories.ProductRepository;
 
 @Service
 public class ProductDeliveryService {
-    private ProductRepository productRepository;
+    private final ProductRepository productRepository;
+
+    public ProductDeliveryService(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
 
     public void addSomeProducts(){
         productRepository.add();
