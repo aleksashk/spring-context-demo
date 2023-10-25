@@ -18,7 +18,6 @@ public class ProjectConfig {
     }
 
     @Bean
-    @Primary
     public Cat cat2(){
         Cat c = new Cat();
         c.setName("Leo");
