@@ -7,10 +7,18 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ProjectConfig {
     @Bean
-    public MyBean myBean() {
+    public MyBean myBean1() {
 
         MyBean bean = new MyBean();
         bean.setText("Hello");
+        return bean;
+    }
+
+    @Bean
+    public MyBean myBean2() {
+
+        MyBean bean = new MyBean();
+        bean.setText("World");
         return bean;
     }
 }

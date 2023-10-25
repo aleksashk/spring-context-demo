@@ -10,8 +10,9 @@ public class Main {
             MyBean b1 = context.getBean(MyBean.class);
             MyBean b2 = context.getBean(MyBean.class);
             MyBean b3 = context.getBean(MyBean.class);
-            System.out.println(b1==b2);
-            System.out.println(b2==b3);
+            System.out.println(b1);
+            System.out.println(b2);
+            System.out.println(b3);
         }
     }
 }
