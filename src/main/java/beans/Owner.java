@@ -7,7 +7,8 @@ import org.springframework.stereotype.Component;
 @Data
 @Component
 public class Owner {
-    @Autowired(required = false)
+
+    @Autowired
     private Cat cat;
 
 }
