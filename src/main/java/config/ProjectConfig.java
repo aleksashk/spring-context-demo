@@ -8,6 +8,9 @@ import org.springframework.context.annotation.Configuration;
 public class ProjectConfig {
     @Bean
     public MyBean myBean() {
-        return new MyBean();
+
+        MyBean bean = new MyBean();
+        bean.setText("Hello");
+        return bean;
     }
 }
