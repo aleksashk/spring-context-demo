@@ -8,7 +8,6 @@ import org.springframework.context.annotation.Primary;
 @Configuration
 public class ProjectConfig {
     @Bean
-    @Primary
     public MyBean myBean1() {
 
         MyBean bean = new MyBean();
