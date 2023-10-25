@@ -1,27 +1,28 @@
 package config;
 
-import beans.Cat;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+
+import javax.sql.DataSource;
 
 @Configuration
-@ComponentScan(basePackages = {"beans"})
+@ComponentScan(basePackages = {"repositories"})
 public class ProjectConfig {
 
     @Bean
-    public Cat cat1(){
-        Cat c = new Cat();
-        c.setName("Tom");
-        return c;
+    public DataSource dataSource() {
+        var dataSource = new DriverManagerDataSource();
+        dataSource.setUrl("jdbc:mysql://localhost/demo");
+        dataSource.setUsername("root");
+        dataSource.setPassword("password");
+        return dataSource;
     }
 
     @Bean
-    public Cat cat2(){
-        Cat c = new Cat();
-        c.setName("Leo");
-        return c;
+    public JdbcTemplate jdbcTemplate() {
+        return new JdbcTemplate(dataSource());
     }
-
 }
