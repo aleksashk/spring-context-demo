@@ -16,6 +16,7 @@ public class ProjectConfig {
     public DataSource dataSource() {
         var dataSource = new DriverManagerDataSource();
         dataSource.setUrl("jdbc:mysql://localhost/demo");
+        dataSource.setUrl("jdbc:mysql://localhost/demo?useSSL=false&serverTimezone=UTC");
         dataSource.setUsername("root");
         dataSource.setPassword("password");
         return dataSource;
