@@ -1,15 +1,20 @@
 package main;
 
+import beans.Cat;
+import beans.Owner;
 import config.ProjectConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import services.ProductDeliveryService;
 
 public class Main {
     public static void main(String[] args) {
-        try (var context = new AnnotationConfigApplicationContext(ProjectConfig.class)) {
 
-            ProductDeliveryService service = context.getBean(ProductDeliveryService.class);
-            service.addSomeProducts();
+        try(var context = new AnnotationConfigApplicationContext(ProjectConfig.class)){
+            Cat cat = context.getBean(Cat.class);
+            Owner owner = context.getBean(Owner.class);
+
+            System.out.println(cat);
+            System.out.println(owner);
         }
+
     }
 }
