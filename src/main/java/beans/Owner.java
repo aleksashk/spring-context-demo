@@ -2,11 +2,14 @@ package beans;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+import org.springframework.stereotype.Component;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Component
 public class Owner {
-    private Cat cat;
+    private final Cat cat;
+
+    public Owner(Cat cat) {
+        this.cat = cat;
+    }
 }
